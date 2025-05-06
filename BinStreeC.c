@@ -1,141 +1,89 @@
 #include "BinSTree.h"
 
-infotype GetAkar (BinTree P);
-/* Mengirimkan informasi yang tersimpan di akar dari pohon Biner yg tdk kosong*/
-BinTree GetLeft (BinTree P);
-/* Mengirimkan anak kiri pohon biner P yang TIDAK kosong */
-BinTree GetRight (BinTree P);
-/* Mengirimkan anak kanan pohon biner P yang TIDAK kosong */
+infotype GetAkar(BinTree P) {
+}
+BinTree GetLeft(BinTree P) {
+}
+BinTree GetRight(BinTree P) {
+}
 
-/* Konstruktor */
-address Alokasi (infotype X);
-/* Mengirimkan address hasil alokasi sebuah elemen */
-/* Jika Alokasi berhasil, maka address != Nil dan Info (P) = X */
-BinTree Tree (infotype Akar, BinTree L, BinTree R);
-/* Menghasilkan sebuah pohon biner dari A, L dan R, jika alokasi berhasil */
-/* Menghasilkan pohon kosong (Nil) jika alokasi gagal */
-void MakeTree (infotype Akar, BinTree L, BinTree R, BinTree *P);
-/* IS : BinTree Sembarang */
-/* FS : Menghasilkan sebuah BinTree */
-/* Menghasilkan sebuah pohon biner dari A, L dan R, jika alokasi berhasil */
-/* Menghasilkan pohon kosong (Nil) jika alokasi gagal */
-void BuildTree (BinTree *P);
-/* Membentuk sebuah BinTree P dari pita karakter yang dibaca */
-/* IS : Pita berisi "konstanta" pohon dalam bentuk prefix. Memori pasti cukup */
-/*      Alokasi pasti berhasil */
-/* FS : P dibentuk dari ekspresi dalam pita */
+address Alokasi(infotype X) {
+}
 
-/**** Predikat Penting *****/
-boolean IsUnerLeft (BinTree P);
-/* Mengirimkan true jika BinTree tidak kosong */
-/* P adalah pohon UnerLeft (hanya mempunyai sub pohon kiri */
-boolean IsUnerRight (BinTree P);
-/* Mengirimkan true jika BinTree tidak kosong */
-/* P adalah pohon UnerRight (hanya mempunyai sub pohon kanan */
-boolean IsBiner (BinTree P);
-/* Mengirimkan true jika BinTree tidak kosong */
-/* P adalah pohon Biner (mempunyai sub pohon kiri dan sub pohon kanan */
-boolean IsEmpty (BinTree P);
-/* Mengirimkan true jika BinTree KOSONG */
-/***** Traversal *****/
-void PreOrder (BinTree P);
-/* Traversal PreOrder menggunakan Rekursif */
-/* IS : P terdefinisi */
-/* FS : Semua simpul P sudah diproses secara PreOrder : Akar, Kiri, Kanan */
-void InOrder (BinTree P);
-/* Traversal InOrder menggunakan Rekursif */
-/* IS : P terdefinisi */
-/* FS : Semua simpul P sudah diproses secara InOrder : Kiri, Arak, Kanan */
-void PostOrder (BinTree P);
-/* Traversal PostOrder menggunakan Rekursif */
-/* IS : P terdefinisi */
-/* FS : Semua simpul P sudah diproses secara PostOrder :  Kiri, Kanan, Akar */
-void PrintTree (BinTree P, int h);
-/* IS : P terdefinisi, h adalah jarak indentasi */
-/* FS : Semua simpul P sudah ditulis dengan indentasi */
+BinTree Tree(infotype Akar, BinTree L, BinTree R) {
+}
+void MakeTree(infotype Akar, BinTree L, BinTree R, BinTree *P) {
+}
+void BuildTree(BinTree *P) {
+}
 
-/***** Search *****/
-boolean Search (BinTree P, infotype X);
-/* Mengirimkan true jika ada node dari P yang bernilai X */
+boolean IsUnerLeft(BinTree P) {
+}
+boolean IsUnerRight(BinTree P) {
+}
+boolean IsBiner(BinTree P) {
+}
+boolean IsEmpty(BinTree P) {
+}
 
-/***** Fungsi Lain *****/
-int nbElmt (BinTree P);
-/* Mengirimkan banyak elemen (node) pohon biner P */
-int nbDaun (BinTree P);
-/* Mengirimkan banyak daun (node) pohon biner P */
-boolean IsSkewLeft (BinTree P);
-/* Mengirimkan true jika P adalah pohon condong kiri */
-boolean IsSkewRight (BinTree P);
-/* Mengirimkan true jika P adalah pohon condong kanan */
-int Level (BinTree P, infotype X);
-/* Mengirimkan level dari node X yang merupakan salah satu simpul dari */
-/* pohon biner P. Akar (P) levelnya adalah 1. Pohon tidak kosong */
-int Depth (BinTree P);
-/* Pohon Biner mungkin Kosong, mengirimkan 'depth' yaitu tinggi dari Pohon */
-/* Basis : Pohon Kosong, tingginya Nol */
-/* Rekurens : 1 + maksimal (Depth (Anak Kiri), Depth  (Anak Kanan)) */
-int Max (infotype Data1, infotype Data2);
-/* Mengirimkan Nilai terbesar dari dua data */
-  
-/***** Operasi Lain *****/
-void AddDaunTerkiri (BinTree *P, infotype X);
-/* Menambah elemen Tree di cabang Kiri dengan alokasi baru */
-/* IS : P boleh kosong */
-/* FS : P bertambah simpulnya, dengan X sebagai simpul daun terkiri */
-void AddDaun (BinTree *P, infotype X, infotype Y, boolean Kiri);
-/* IS : P tidak kosong, X adalah salah satu daun Pohon Biner P */
-/* FS : P bertambah simpulnya, dengan Y sebagai anak kiri X (jika Kiri) */
-/*      atau sebagai anak Kanan X (jika NOT Kiri) */
-void DelDaunTerkiri (BinTree *T, infotype *X);
-/* IS : P TIDAK Kosong */
-/* FS : P dihapus daun terkirinya, dan didealokasi, dengan X adalah info */
-/*      yang semula disimpan pada daun terkiri yang dihapus */
-void DelDaun (BinTree *T, infotype X);
-/* IS : P TIDAK kosong, X adalah salah satu daun */
-/* FS : X dihapus dari P */
+void PreOrder(BinTree P) {
+}
+void InOrder(BinTree P) {
+}
+void PostOrder(BinTree P) {
+}
+void PrintTree(BinTree P, int h) {
+}
 
-/***** Manipulasi LIST OF NODE *****/
-ListOfNode MakeListDaun (BinTree P);
-/* Jika P adalah Pohon Kosong, maka menghasilkan List Kosong */
-/* Jika P bukan Pohon Kosong, menghasilkan List yang elemennya adalah semua */
-/*        daun pohon P, jika semua alokasi berhasil */
-/*       		menghasilkan list kosong jika ada alokasi yang gagal */
-ListOfNode MakeListPreOrder (BinTree P);
-/* Jika P adalah Pohon Kosong, maka menghasilkan List Kosong */
-/* Jika P bukan Pohon Kosong, menghasilkan List yang elemennya adalah semua */
-/*        elemen pohon P dengan urutan PreOrder, jika semua alokasi berhasil */
-/*       		menghasilkan list kosong jika ada alokasi yang gagal */
-ListOfNode MakeListLevel (BinTree P, int N);
-/* Jika P adalah Pohon Kosong, maka menghasilkan List Kosong */
-/* Jika P bukan Pohon Kosong, menghasilkan List yang elemennya adalah semua */
-/*        elemen pohon P yang levelnya = N, jika semua alokasi berhasil */
-/*       		menghasilkan list kosong jika ada alokasi yang gagal */
+boolean Search(BinTree P, infotype X) {
+}
 
-/***** Membentuk Balanced Tree *****/
-BinTree BuildBalanceTree (int N);
-/* Menghasilkan sebuah balance Tree dengan N Node, nilai setiap node dibaca */
+int nbElmt(BinTree P) {
+}
+int nbDaun(BinTree P) {
+}
+boolean IsSkewLeft(BinTree P) {
+}
+boolean IsSkewRight(BinTree P) {
+}
+int Level(BinTree P, infotype X) {
+}
+int Depth(BinTree P) {
+}
+int Max(infotype Data1, infotype Data2) {
+}
 
-/***** Operasi untuk Binary Search Tree *****/
-boolean BSearch (BinTree P, infotype X);
-/* Mengirimkan True jika ada node dari P yang bernilai X */
-address BinSearch (BinTree P, infotype X);
-/* Mengirimkan alamat Node jika ada node dari P yang bernilai X */
-/* Mengirimkan Nil jika tidak ditemukan */
-void InsSearch (BinTree *P, infotype X);
-/* Menghasilkan sebuah pohon Binary Search Tree P dengan tambahan simpul X. */
-/* Belum ada simpul P yang bernilai X */
+void AddDaunTerkiri(BinTree *P, infotype X) {
+}
+void AddDaun(BinTree *P, infotype X, infotype Y, boolean Kiri) {
+}
+void DelDaunTerkiri(BinTree *T, infotype *X) {
+}
+void DelDaun(BinTree *T, infotype X) {
+}
 
-void DestroyTree (BinTree *P);
-/* Menghapus seluruh elemen Tree secara Rekursif */
-/* IS : P terdefinisi */
-/* FS : Semua simpul P sudah dihapus secara PostOrder :  Kiri, Kanan, Akar */
-void DelBTree (BinTree *P, infotype X);
-/* IS : Pohon P TIDAK kosong */
-/* FS : Nilai X yang dihapus pasti ada, sebuah node dengan nilai X dihapus */
-void DelNode (BinTree *P);
-/* IS : P adalah pohon biner TIDAK kosong */
-/* FS : Q berisi salinan nilai daun terkanan */
-void DeAlokasi (address P);
-/* IS : P terdefinisi */
-/* FS : P dikembalikan ke sistem */
-/* Melakukan dealokasi / pengembalian address P ke system */
+ListOfNode MakeListDaun(BinTree P) {
+}
+ListOfNode MakeListPreOrder(BinTree P) {
+}
+ListOfNode MakeListLevel(BinTree P, int N) {
+}
+
+BinTree BuildBalanceTree(int N) {
+}
+
+boolean BSearch(BinTree P, infotype X) {
+}
+address BinSearch(BinTree P, infotype X) {
+}
+void InsSearch(BinTree *P, infotype X) {
+}
+
+void DestroyTree(BinTree *P) {
+}
+void DelBTree(BinTree *P, infotype X) {
+}
+void DelNode(BinTree *P) {
+}
+void DeAlokasi(address P) {
+}

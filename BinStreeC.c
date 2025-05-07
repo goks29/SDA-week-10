@@ -15,7 +15,7 @@ address Alokasi(infotype X) {
         P->right = Nil;
     } else {
         printf("Alokasi gagal");
-        return;
+        return 0;
     }
     return P;
 }
@@ -31,14 +31,9 @@ BinTree Tree(infotype Akar, BinTree L, BinTree R) {
 
     return P;
 }
+
 void MakeTree(infotype Akar, BinTree L, BinTree R, BinTree *P) {
-    (*P) = Alokasi(Akar);
-    if ((*P) != Nil) {
-        (*P)->left = L;
-        (*P)->right =  R;
-    } else {
-        (*P) = Nil;
-    }
+    (*P) = Tree(Akar,L,R);
 }
 
 void BuildTree(BinTree *P) {
@@ -108,7 +103,21 @@ void PostOrder(BinTree P) {
 }
 
 void PrintTree(BinTree P, int h) {
+    int i;
 
+    if(P == Nil){
+        for(i = 0; i < h; i++) printf(" ");
+        printf("[.]\n"); 
+        return;
+    }
+
+    h += 5;
+    PrintTree(P->right, h);
+
+    for(i = 5; i < h; i++) printf(" ");
+    printf("%c\n", P->info); 
+
+    PrintTree(P->left, h);
 }
 
 boolean Search(BinTree P, infotype X) {

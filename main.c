@@ -2,6 +2,8 @@
 #include "BinSTree.h"
 
 int main(){
+
+    BinTree tree;
     int PilihMenu;
     
 

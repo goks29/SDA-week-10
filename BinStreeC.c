@@ -120,6 +120,24 @@ void PrintTree(BinTree P, int h) {
     PrintTree(P->left, h);
 }
 
+void LevelOrder(BinTree P) {
+    int queue[100];
+    int front = 0;
+    int rear = 0;
+
+    if ((P) == Nil) {
+        return;
+    }
+
+    rear++;
+    queue[rear] = P->info;
+
+    while (front < rear) {
+        front++;
+
+    }
+}
+
 boolean Search(BinTree P, infotype X) {
     if (P == Nil) {
         return false;

@@ -89,6 +89,7 @@ void PostOrder (BinTree P);
 void PrintTree (BinTree P, int h);
 /* IS : P terdefinisi, h adalah jarak indentasi */
 /* FS : Semua simpul P sudah ditulis dengan indentasi */
+void LevelOrder (BinTree P);
 
 /***** Search *****/
 boolean Search (BinTree P, infotype X);

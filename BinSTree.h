@@ -17,7 +17,7 @@
 #define InfoList(L) (L)->info
 #define Next(L) (L)->next
 
-typedef int infotype;
+typedef char infotype;
 typedef struct tElmtTree *address;
 typedef struct tElmtTree {
 	infotype info;
@@ -81,7 +81,7 @@ void PreOrder (BinTree P);
 void InOrder (BinTree P);
 /* Traversal InOrder menggunakan Rekursif */
 /* IS : P terdefinisi */
-/* FS : Semua simpul P sudah diproses secara InOrder : Kiri, Arak, Kanan */
+/* FS : Semua simpul P sudah diproses secara InOrder : Kiri, Akar, Kanan */
 void PostOrder (BinTree P);
 /* Traversal PostOrder menggunakan Rekursif */
 /* IS : P terdefinisi */

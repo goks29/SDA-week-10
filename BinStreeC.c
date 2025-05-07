@@ -184,7 +184,6 @@ void AddDaun(BinTree *P, infotype X, infotype Y, boolean Kiri) {
         AddDaun(&(*P)->right, X, Y, Kiri);
     }
 
-    
 }
 
 void DelDaunTerkiri(BinTree *T, infotype *X) {

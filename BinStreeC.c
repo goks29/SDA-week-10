@@ -150,10 +150,31 @@ int Max(infotype Data1, infotype Data2) {
 
 
 void AddDaunTerkiri(BinTree *P, infotype X) {
-    
+    if ((*P) == Nil){
+        (*P) = Alokasi(X);
+    } else {
+        if ((*P)->left == Nil) {
+            (*P)->left = Alokasi(X);
+        } else {
+            AddDaunTerkiri(&(*P)->left, X);
+        }
+    }
 }
 
 void AddDaun(BinTree *P, infotype X, infotype Y, boolean Kiri) {
+    if ((*P) == Nil) {
+        return;
+    } 
+
+    if (Kiri && (*P)->left == Nil) {
+        (*P)->left = Alokasi(X);
+    } else if (!Kiri && (*P)->right == Nil) {
+        (*P)->right = Alokasi(X);
+    } else {
+        AddDaun(&(*P)->left, X, Y, Kiri);
+        AddDaun(&(*P)->right, X, Y, Kiri);
+    }
+
     
 }
 
@@ -184,7 +205,15 @@ BinTree BuildBalanceTree(int N) {
 }
 
 boolean BSearch(BinTree P, infotype X) {
+    if (P == Nil) {
+        return false;
+    }
 
+    if (P->info == X) {
+        return true;
+    } else {
+        return BSearch(P->left,X) || BSearch(P->right,X);
+    }
 }
 
 address BinSearch(BinTree P, infotype X) {

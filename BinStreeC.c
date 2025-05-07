@@ -88,22 +88,49 @@ void PreOrder(BinTree P) {
 }
 
 void InOrder(BinTree P) {
-    
+    if (P == Nil) {
+        return;
+    } else {
+        InOrder(P->left);
+        printf("%c -> ",P->info);
+        InOrder(P->right);
+    }
 }
 
 void PostOrder(BinTree P) {
+    if (P == Nil) {
+        return;
+    } else {
+        PostOrder(P->left);
+        PostOrder(P->right);
+        printf("%c -> ", P->info);
+    }
 }
 
 void PrintTree(BinTree P, int h) {
+
 }
 
 boolean Search(BinTree P, infotype X) {
+    if (P == Nil) {
+        return false;
+    } else {
+        if (P->info == X) {
+            return true;
+        } else {
+            return Search(P->left,X) || Search(P->right,X);
+        }
+    }
+
+
 }
 
 int nbElmt(BinTree P) {
+
 }
 
 int nbDaun(BinTree P) {
+    
 }
 
 boolean IsSkewLeft(BinTree P) {
@@ -123,49 +150,64 @@ int Max(infotype Data1, infotype Data2) {
 
 
 void AddDaunTerkiri(BinTree *P, infotype X) {
+    
 }
 
 void AddDaun(BinTree *P, infotype X, infotype Y, boolean Kiri) {
+    
 }
 
 void DelDaunTerkiri(BinTree *T, infotype *X) {
+
 }
 
 void DelDaun(BinTree *T, infotype X) {
+
 }
 
 
 ListOfNode MakeListDaun(BinTree P) {
+
 }
 
 ListOfNode MakeListPreOrder(BinTree P) {
+
 }
 
 ListOfNode MakeListLevel(BinTree P, int N) {
+
 }
 
 
 BinTree BuildBalanceTree(int N) {
+
 }
 
 boolean BSearch(BinTree P, infotype X) {
+
 }
 
 address BinSearch(BinTree P, infotype X) {
+
 }
 
 void InsSearch(BinTree *P, infotype X) {
+
 }
 
 
 void DestroyTree(BinTree *P) {
+
 }
 
 void DelBTree(BinTree *P, infotype X) {
+
 }
 
 void DelNode(BinTree *P) {
+
 }
 
 void DeAlokasi(address P) {
+
 }

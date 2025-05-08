@@ -214,9 +214,23 @@ int Depth(BinTree P) {
 
 }
 
-int Max(infotype Data1, infotype Data2) {
+int Max(BinTree P,infotype Data1, infotype Data2) {
+    int data1 = Level(P,Data1);
+    int data2 = Level(P,Data2);
 
+    if (Data1 == 0 || Data2 == 0) {
+        return Nil;
+    }
+    
+    if (Data1 == Data2) {
+        return 0;
+    } else if (Data1 >Data2){
+        return Data1;
+    } else {
+        return Data2;
+    }
 }
+
 
 
 void AddDaunTerkiri(BinTree *P, infotype X) {

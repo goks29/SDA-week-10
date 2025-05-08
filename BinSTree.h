@@ -111,7 +111,7 @@ int Depth (BinTree P);
 /* Pohon Biner mungkin Kosong, mengirimkan 'depth' yaitu tinggi dari Pohon */
 /* Basis : Pohon Kosong, tingginya Nol */
 /* Rekurens : 1 + maksimal (Depth (Anak Kiri), Depth  (Anak Kanan)) */
-int Max (infotype Data1, infotype Data2);
+int Max (BinTree P, infotype Data1, infotype Data2);
 /* Mengirimkan Nilai terbesar dari dua data */
   
 /***** Operasi Lain *****/

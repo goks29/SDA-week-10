@@ -3,9 +3,9 @@
 
         int main(){
 
-            int PilihMenu, PilihArah, JmlDaun;
+            int PilihMenu, PilihArah, JmlDaun, banding1, banding2, penampungbanding, p;
             BinTree tree = Nil;
-            char InputUser, searchNode, Parents, child;
+            char InputUser, searchNode, Parents, child, anjing;
             boolean Search, arah;
 
                 while(1){
@@ -90,8 +90,7 @@
                         printf("Jumlah Daun/Leaf pada Tree adalah : %d",JmlDaun);
                         break;
                     case 9:
-                        char anjing;
-                        int p = 0;
+                        p = 0;
                         scanf(" %c",&anjing);
                         getchar();
 
@@ -99,6 +98,24 @@
                         printf("%d",p);
                         break;
                     case 10:
+                        PrintTree(tree,0);
+                        printf("Masukan node yang ingin di bandingkan? (1) : ");
+                        scanf(" %c",&banding1);
+                        getchar();
+    
+                        printf("Masukan node yang ingin di bandingkan? (2) : ");
+                        scanf("%c",&banding2);
+                        getchar();
+    
+                        penampungbanding = Max(tree,banding1,banding2);
+    
+                        if (penampungbanding == '\0') {
+                            printf("Salah satu node yang dibandingkan tidak ada \n");
+                        } else if (penampungbanding == 0) {
+                            printf("Node yang dibandingkan berada di level yang sama \n");
+                        } else {
+                            printf("%c adalah node dengan level terdalam \n", penampungbanding);
+                        }
                         break;
                     case 11:
                         return 0;

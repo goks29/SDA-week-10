@@ -211,7 +211,13 @@ int Level(BinTree P, infotype X) {
 }
 
 int Depth(BinTree P) {
+    if(P == Nil){
+        return 0;
+    }
 
+    int leftdepth = Depth(P->left);
+    int rightdepth = Depth(P->right);
+    return 1 + (leftdepth > rightdepth ? leftdepth : rightdepth);
 }
 
 int Max(BinTree P,infotype Data1, infotype Data2) {

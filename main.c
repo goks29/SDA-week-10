@@ -3,10 +3,11 @@
 
         int main(){
 
-            int PilihMenu, PilihArah, JmlDaun, banding1, banding2, penampungbanding, p;
+            int PilihMenu, PilihArah, JmlDaun, banding1, banding2, penampungbanding, hasildepth;
             BinTree tree = Nil;
-            char InputUser, searchNode, Parents, child, anjing;
+            char InputUser, searchNode, Parents, child;
             boolean Search, arah;
+            hasildepth = 0;
 
                 while(1){
                     printf("\n==========================\n");
@@ -16,11 +17,11 @@
                         " 3. Traversal PreOrder\n"
                         " 4. Traversal InOrder\n"
                         " 5. Traversal PostOrder\n"
-                        " 6. Traversal Level Order\n" //
+                        " 6. Traversal Level Order\n" 
                         " 7. Search Node Tree\n"
-                        " 8. Jumlah Daun/Leaf Tree\n" //
+                        " 8. Jumlah Daun/Leaf Tree\n" 
                         " 9. Mencari kedalaman Tree\n" //
-                        "10. Membandingkan 2 Node Tree\n" //
+                        "10. Membandingkan 2 Node Tree\n" 
                         "11. Exit\n");
                     printf("Pilih Menu: ");
                     scanf("%d", &PilihMenu);
@@ -90,12 +91,9 @@
                         printf("Jumlah Daun/Leaf pada Tree adalah : %d",JmlDaun);
                         break;
                     case 9:
-                        p = 0;
-                        scanf(" %c",&anjing);
-                        getchar();
-
-                        p = Level(tree,anjing);
-                        printf("%d",p);
+                        hasildepth = Depth(tree);
+                        PrintTree(tree,0);
+                        printf("Depth pohon adalah : %d",hasildepth);
                         break;
                     case 10:
                         PrintTree(tree,0);

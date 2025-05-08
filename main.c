@@ -3,10 +3,10 @@
 
         int main(){
 
-            int PilihMenu;
+            int PilihMenu, PilihArah, JmlDaun;
             BinTree tree = Nil;
-            char InputUser, searchNode;
-            boolean Search;
+            char InputUser, searchNode, Parents, child;
+            boolean Search, arah;
 
                 while(1){
                     printf("\n==========================\n");
@@ -29,25 +29,43 @@
                     {
                     case 1:
                         if(tree == Nil){
-                            printf("Masukan Node root : ");
+                            printf("\nMasukan Node root : ");
                             scanf(" %c",&InputUser);
                             getchar();
 
                             MakeTree(InputUser,Nil,Nil,&tree);
                         }else{
-                            printf("tree tidak ada");
+                            printf("\nMasukan Node Parents yang ingin ditambahkan anaknya :");
+                            scanf(" %c",&Parents);
+                            getchar();
+                            
+                            printf("\nMasukan Node Anak : ");
+                            scanf(" %c",&child);
+                            getchar();
+
+                            printf("\nPilih arah anak Kiri = 1, kanan = 2 : ");
+                            scanf(" %d",&PilihArah);
+                            if(PilihArah == 1){
+                                arah = true;
+                            }else{
+                                arah = false;
+                            }
+                            AddDaun(&tree,Parents,child,arah);
                         }
                         break;
                     case 2:
                         PrintTree(tree,0);
                         break;
                     case 3:
+                        PrintTree(tree,0);
                         PreOrder(tree);
                         break;
                     case 4:
+                    PrintTree(tree,0);
                         InOrder(tree);
                         break;
                     case 5:
+                    PrintTree(tree,0);
                         PostOrder(tree);
                         break;
                     case 6:
@@ -66,7 +84,8 @@
                         }
                         break;
                     case 8:
-                        
+                        JmlDaun = nbDaun(tree);
+                        printf("Jumlah Daun/Leaf pada Tree adalah : %d",JmlDaun);
                         break;
                     case 9:
                         break;

@@ -128,12 +128,23 @@ void LevelOrder(BinTree P) {
     BinTree queue[100], current;
     int front = 0, rear = 0;
 
-    queue[rear++] = P;
+    rear++;
+    queue[rear] = P;
 
     while (front < rear) {
-        current = queue[front++];
+        front++;
+        current = queue[front];
         printf("%c -> ",current->info);
         
+        if (current->left != Nil) {
+            rear++;
+            queue[rear] = current->left;
+        }
+
+        if (current->right != Nil) {
+            rear++;
+            queue[rear] = current->right;
+        }
     }
     
 }
@@ -176,12 +187,35 @@ boolean IsSkewRight(BinTree P) {
 }
 
 int Level(BinTree P, infotype X) {
+    int i;
+
+    if (P == Nil) {
+        return 0;
+    }
+
+    if (P->info == X) {
+        return 1;
+    }
+
+    int Left = Level(P->left, X);
+    if (Left > 0) {
+        return Left + 1;
+    }
+
+    int Right = Level(P->right, X);
+    if (Right > 0) {
+        return Right + 1;
+    }
+
+    return 0;
 }
 
 int Depth(BinTree P) {
+
 }
 
 int Max(infotype Data1, infotype Data2) {
+
 }
 
 

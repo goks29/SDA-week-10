@@ -35,6 +35,7 @@
 
                             MakeTree(InputUser,Nil,Nil,&tree);
                         }else{
+                            PrintTree(tree,0);
                             printf("\nMasukan Node Parents yang ingin ditambahkan anaknya :");
                             scanf(" %c",&Parents);
                             getchar();
@@ -61,15 +62,16 @@
                         PreOrder(tree);
                         break;
                     case 4:
-                    PrintTree(tree,0);
+                        PrintTree(tree,0);
                         InOrder(tree);
                         break;
                     case 5:
-                    PrintTree(tree,0);
+                        PrintTree(tree,0);
                         PostOrder(tree);
                         break;
                     case 6:
-                        
+                        PrintTree(tree,0);
+                        LevelOrder(tree);
                         break;
                     case 7:
                         printf("Masukan info node yang ingin dicari : ");
@@ -88,6 +90,13 @@
                         printf("Jumlah Daun/Leaf pada Tree adalah : %d",JmlDaun);
                         break;
                     case 9:
+                        char anjing;
+                        int p = 0;
+                        scanf(" %c",&anjing);
+                        getchar();
+
+                        p = Level(tree,anjing);
+                        printf("%d",p);
                         break;
                     case 10:
                         break;

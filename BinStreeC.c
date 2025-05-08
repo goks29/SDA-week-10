@@ -157,7 +157,16 @@ int nbElmt(BinTree P) {
 }
 
 int nbDaun(BinTree P) {
-    
+
+    if (P == Nil) {
+        return 0;
+    }
+
+    if (P->left == Nil && P->right == Nil) {
+        return 1;
+    }
+
+    return nbDaun(P->left) + nbDaun(P->right);
 }
 
 boolean IsSkewLeft(BinTree P) {
@@ -189,19 +198,28 @@ void AddDaunTerkiri(BinTree *P, infotype X) {
 }
 
 void AddDaun(BinTree *P, infotype X, infotype Y, boolean Kiri) {
+    address N;
+
     if ((*P) == Nil) {
         return;
     } 
 
-    if (Kiri && (*P)->left == Nil) {
-        (*P)->left = Alokasi(X);
-    } else if (!Kiri && (*P)->right == Nil) {
-        (*P)->right = Alokasi(X);
-    } else {
+    if((*P)->info == X){
+        if (Kiri && (*P)->left == Nil) {
+            N = Alokasi(Y);
+            if(N != Nil){
+                (*P)->left = N;
+            }
+        } else if (!Kiri && (*P)->right == Nil) {
+            N = Alokasi(Y);
+            if(N != Nil){
+                (*P)->right = N;
+            }
+        }
+    }else {
         AddDaun(&(*P)->left, X, Y, Kiri);
         AddDaun(&(*P)->right, X, Y, Kiri);
     }
-
 }
 
 void DelDaunTerkiri(BinTree *T, infotype *X) {

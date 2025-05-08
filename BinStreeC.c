@@ -121,21 +121,21 @@ void PrintTree(BinTree P, int h) {
 }
 
 void LevelOrder(BinTree P) {
-    int queue[100];
-    int front = 0;
-    int rear = 0;
-
-    if ((P) == Nil) {
+    if (P == Nil) {
         return;
     }
 
-    rear++;
-    queue[rear] = P->info;
+    BinTree queue[100], current;
+    int front = 0, rear = 0;
+
+    queue[rear++] = P;
 
     while (front < rear) {
-        front++;
-
+        current = queue[front++];
+        printf("%c -> ",current->info);
+        
     }
+    
 }
 
 boolean Search(BinTree P, infotype X) {
@@ -189,19 +189,28 @@ void AddDaunTerkiri(BinTree *P, infotype X) {
 }
 
 void AddDaun(BinTree *P, infotype X, infotype Y, boolean Kiri) {
+    address N;
+
     if ((*P) == Nil) {
         return;
     } 
 
-    if (Kiri && (*P)->left == Nil) {
-        (*P)->left = Alokasi(X);
-    } else if (!Kiri && (*P)->right == Nil) {
-        (*P)->right = Alokasi(X);
+    if ((*P)->info == X) {
+        if (Kiri && (*P)->left == Nil) {
+            N = Alokasi(Y);
+            if (N != Nil) {
+                (*P)->left = N;
+            }
+        } else if (!Kiri && (*P)->right == Nil) {
+            N = Alokasi(Y);
+            if (N != Nil) {
+                (*P)->right = N;
+            }
+        } 
     } else {
         AddDaun(&(*P)->left, X, Y, Kiri);
         AddDaun(&(*P)->right, X, Y, Kiri);
     }
-
 }
 
 void DelDaunTerkiri(BinTree *T, infotype *X) {

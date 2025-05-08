@@ -91,9 +91,8 @@
                         printf("Jumlah Daun/Leaf pada Tree adalah : %d",JmlDaun);
                         break;
                     case 9:
-                        hasildepth = Depth(tree);
                         PrintTree(tree,0);
-                        printf("Depth pohon adalah : %d",hasildepth);
+                        printf("Depth pohon: %d\n", Depth(tree) - 1);
                         break;
                     case 10:
                         PrintTree(tree,0);

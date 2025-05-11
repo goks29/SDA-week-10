@@ -337,3 +337,27 @@ void DelNode(BinTree *P) {
 void DeAlokasi(address P) {
 
 }
+
+void StringToMorse(address P, char c, char *path, int depth) {
+    if (P == Nil) {
+        return;
+    } 
+    
+    if (P->info == c) {
+        for (int i = 0; i < depth; i++) {
+            printf(" %c ", path[i]);
+        }
+        printf (" ");
+        return;
+    }
+
+    path[depth] = '.';
+    StringToMorse(P->left,c,path,depth + 1);
+
+    path[depth] = '-';
+    StringToMorse(P->right,c,path,depth + 1);
+}
+
+    
+    
+

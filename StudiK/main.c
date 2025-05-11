@@ -71,8 +71,17 @@
                         PostOrder(tree);
                         break;
                     case 6:
-                        PrintTree(tree,0);
-                        LevelOrder(tree);
+                        char input[100];
+                        char path[100];
+
+                        printf("Masukkan kalimat (huruf kapital tanpa spasi): ");
+                        scanf("%s", input);
+
+                        printf("Kode Morse: ");
+                        for (int i = 0; i < strlen(input); i++) {
+                            StringToMorse(tree, input[i], path, 0);
+                        }
+                        printf("\n");
                         break;
                     case 7:
                         printf("Masukan info node yang ingin dicari : ");

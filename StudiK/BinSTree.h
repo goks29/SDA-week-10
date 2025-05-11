@@ -7,6 +7,7 @@
 #define _BINTREE_H
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #define true 1
 #define false 0
 #define boolean unsigned char
@@ -176,5 +177,6 @@ void DeAlokasi (address P);
 /* IS : P terdefinisi */
 /* FS : P dikembalikan ke sistem */
 /* Melakukan dealokasi / pengembalian address P ke system */
+void StringToMorse (address P, char c, char *path, int depth);
 
 #endif

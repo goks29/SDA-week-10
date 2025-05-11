@@ -107,7 +107,7 @@ void PrintTree(BinTree P, int h) {
 
     if(P == Nil){
         for(i = 0; i < h; i++) printf(" ");
-        printf("[.]\n"); 
+        printf("Kosong\n"); 
         return;
     }
 
@@ -357,6 +357,7 @@ void StringToMorse(address P, char c, char *path, int depth) {
     path[depth] = '-';
     StringToMorse(P->right,c,path,depth + 1);
 }
+
 
     
     

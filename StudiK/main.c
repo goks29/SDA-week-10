@@ -6,6 +6,7 @@
             int PilihMenu, PilihArah, JmlDaun, banding1, banding2, penampungbanding, hasildepth;
             BinTree tree = Nil;
             char InputUser, searchNode, Parents, child;
+            char input[100],path[100];;
             boolean Search, arah;
             hasildepth = 0;
 
@@ -71,9 +72,6 @@
                         PostOrder(tree);
                         break;
                     case 6:
-                        char input[100];
-                        char path[100];
-
                         printf("Masukkan kalimat (huruf kapital tanpa spasi): ");
                         scanf("%s", input);
 

@@ -59,12 +59,20 @@
                         InOrder(tree);
                         break;
                     case 4:
-                        printf("Masukkan kalimat (huruf kapital tanpa spasi): ");
+                        printf("Masukkan kalimat (huruf kapital tanpa spasi/menggunakan _): ");
                         scanf("%s", input);
 
                         printf("Kode Morse: ");
                         for (int i = 0; i < strlen(input); i++) {
-                            StringToMorse(tree, input[i], path, 0);
+                            if (input[i] >= 'a' && input[i] <= 'z') {
+                                input[i] = input[i] - 32; 
+                            }
+
+                            if ((input[i] >= 'A' && input[i] <= 'Z') || input[i] == '_') {
+                                StringToMorse(tree, input[i], path, 0);
+                            } else {
+                                printf("? "); 
+                            }
                         }
                         printf("\n");
                         break;

@@ -345,8 +345,9 @@ void StringToMorse(address P, char c, char *path, int depth) {
     
     if (P->info == c) {
         for (int i = 0; i < depth; i++) {
-            printf(" %c ", path[i]);
+            printf("%c", path[i]);
         }
+        printf (" ");
         printf (" ");
         return;
     }

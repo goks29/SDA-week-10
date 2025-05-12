@@ -359,7 +359,25 @@ void StringToMorse(address P, char c, char *path, int depth) {
     StringToMorse(P->right,c,path,depth + 1);
 }
 
+void MorseToChar(address P, const char* node, int depth) {
+    if (P == Nil) {
+        return;
+    }
 
-    
+    // Jika sudah mencapai akhir kode morse
+    if (node[depth] == '\0') {
+        printf("%c", P->info);
+        return;
+    }
+
+    // Rekursi berdasarkan simbol morse
+    if (node[depth] == '.') {
+        MorseToChar(P->left, node, depth + 1);
+    } else if (node[depth] == '-') {
+        MorseToChar(P->right, node, depth + 1);
+    }
+}
+
+
     
 

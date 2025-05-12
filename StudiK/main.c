@@ -3,12 +3,13 @@
 
         int main(){
 
-            int PilihMenu, PilihArah, JmlDaun, banding1, banding2, penampungbanding, hasildepth;
+            int PilihMenu, PilihArah, JmlDaun, banding1, banding2, penampungbanding, hasildepth,index;
             BinTree tree = Nil;
             char InputUser, searchNode, Parents, child;
-            char input[100],path[100];;
+            char input[100],path[100],buffer[10];
             boolean Search, arah;
             hasildepth = 0;
+            index = 0;
 
                 while(1){
                     printf("\n==========================\n");
@@ -77,6 +78,25 @@
                         printf("\n");
                         break;
                     case 5:
+                            printf("Masukkan kode Morse (pisah tiap huruf dengan spasi) :");
+                            while (getchar() != '\n');
+                            fgets(input, sizeof(input), stdin);
+                            input[strcspn(input, "\n")] = 0;
+
+                            for (int i = 0; ; i++) {
+                                if (input[i] == '.' || input[i] == '-') {
+                                    buffer[index++] = input[i];
+                                } else if (input[i] == ' ' || input[i] == '\0') {
+                                    buffer[index] = '\0';
+                                    if (index > 0) {
+                                        MorseToChar(tree, buffer, 0);
+                                        index = 0;
+                                    }
+
+                                    if (input[i] == '\0') break;
+                                }
+                            }
+                            printf("\n");
                         break;
                     case 6:
                         return 0;

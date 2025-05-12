@@ -179,4 +179,6 @@ void DeAlokasi (address P);
 /* Melakukan dealokasi / pengembalian address P ke system */
 void StringToMorse (address P, char c, char *path, int depth);
 
+void MorseToChar(address P, const char* node, int depth);
+
 #endif

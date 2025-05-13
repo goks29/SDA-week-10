@@ -69,7 +69,7 @@
                                 input[i] = input[i] - 32; 
                             }
 
-                            if ((input[i] >= 'A' && input[i] <= 'Z') || input[i] == '_') {
+                            if ((input[i] >= 'A' && input[i] <= 'Z') || (input[i] >= '0' && input[i] <= '9') || input[i] == '_') {
                                 StringToMorse(tree, input[i], path, 0);
                             } else {
                                 printf("? "); 
